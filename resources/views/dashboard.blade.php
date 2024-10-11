@@ -44,7 +44,7 @@
                                         {{ $startDay }}. gün
                                     </li>
                                 @endif
-                                <li class="list-group-item">{{ isset($weeklyJobHour['title']) ? $weeklyJobHour['title'] : '-' }}</li>
+                                <li class="list-group-item">{{ isset($weeklyJobHour['title']) ? $weeklyJobHour['title'] : '-' }} - {{ isset($weeklyJobHour['list_id']) ? $weeklyJobHour['list_id'] : '-' }} .Liste</li>
                             @endforeach
                         </ul>
                     </div>

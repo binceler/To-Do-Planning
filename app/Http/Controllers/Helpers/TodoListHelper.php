@@ -25,6 +25,7 @@ class TodoListHelper
                     $hours[$level][] = [
                         'id' => $job->id,
                         'title' => $job->title,
+                        'list_id' => $job->job_list_id
                     ];
                 }
             }
@@ -98,10 +99,11 @@ class TodoListHelper
                                    ->first();
         $largestTotalHour = $largestTotalObj->sum;
 
+
         //$devList1 = config('dev_lists');
 
         $devList = DevList::getDevList();
-        for ($startHour = 1; $startHour < $largestTotalHour; $startHour++) {
+        for ($startHour = 0; $startHour < $largestTotalHour; $startHour++) {
 
             foreach ($this->levels as $level) {
                 if (count($hours[$level]) == 0) {
